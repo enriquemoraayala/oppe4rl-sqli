@@ -9,6 +9,7 @@ from ray.rllib.agents.ppo import PPOTrainer
 #from ray.rllib.algorithms.dqn.dqn import DQNTrainer
 import ray
 from ray.tune.registry import register_env
+from ray.tune.logger import pretty_print
 import tensorflow as tf
 from gym_waf.envs.waf_brain_env import WafBrainEnv
 
@@ -70,9 +71,11 @@ def main(args):
     
     lengths = []
     # for n in range(int(500 / 32)):
-    for n in range(2):
+    for n in range(10):
         result = trainer.train()
-        file_name = trainer.save('ckpt_ppo_agent')
+        if n%5 == 0:
+            print(pretty_print(result))
+            file_name = trainer.save('ckpt_ppo_agent')
         s = "{:3d} reward {:6.2f}/{:6.2f}/{:6.2f} len {:6.2f} saved {}"
         lengths += result["hist_stats"]["episode_lengths"]
         print(s.format(
@@ -84,6 +87,7 @@ def main(args):
             file_name
         ))
     print(0)
+    print(pretty_print(result))
         
 
 if __name__ == '__main__':

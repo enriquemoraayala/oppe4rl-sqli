@@ -1,6 +1,6 @@
 {
     "agent": "random",
-    "episodes": 10,
+    "episodes": 3,
     "config": {
     }
 }

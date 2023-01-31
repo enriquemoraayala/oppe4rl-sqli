@@ -138,7 +138,7 @@ def main(args) -> None:
                 episode_wins_last_50 = episode_wins[max(0, i_episode + 1 - 50):(i_episode + 1)]
                 run.log("winProportionLast50", sum(episode_wins_last_50) / len(episode_wins_last_50))
                 break
-        scores.append((score/step))               # save most recent score (average)
+        scores.append(score)               # save most recent score (average)
         eps = max(eps_end, eps_decay*eps)  # decrease epsilon
         print('\rEpisode {}\tAverage Score: {:.2f} \n'
               .format(episode, np.mean(scores)), end="")

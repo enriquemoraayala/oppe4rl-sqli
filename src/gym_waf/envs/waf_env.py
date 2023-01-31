@@ -40,7 +40,10 @@ class WafEnv(gym.Env):
         self.max_reward = reward_win_val 
         self.min_reward = 0.0
         self.orig_payload = None
-        self.observation_space = gym.spaces.Box(low=0., high=1., shape=self.feature_extractor.shape, dtype=np.float32)
+        if feature_extractor == 'SqlEmbedFeatureExtractor':
+            self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=self.feature_extractor.shape, dtype=np.float32)    
+        else:
+            self.observation_space = gym.spaces.Box(low=0., high=1., shape=self.feature_extractor.shape, dtype=np.float32)
         self.turn_penalty = turn_penalty
 
         self.payload = None
@@ -91,7 +94,7 @@ class WafEnv(gym.Env):
 
     def _process_reward(self, reward):
         reward = reward - (self.turns - 1) * self.turn_penalty  # encourage fewer turns
-        reward = max(min(reward, self.max_reward), self.min_reward)
+        # reward = max(min(reward, self.max_reward), self.min_reward)
         return reward
 
     def reset(self, payload: str=None):

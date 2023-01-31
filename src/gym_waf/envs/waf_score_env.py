@@ -54,8 +54,8 @@ class WafScoreEnv(WafEnv):
 
         logging.debug("mutated payload: {}".format(colored(repr(self.payload),
                                                    'yellow')))
-        logging.debug("state: {}".format(colored(repr(self.observation),
-                                                 'yellow')))
+        #logging.debug("state: {}".format(colored(repr(self.observation),
+        #                                         'yellow')))
 
         win = False
         # get reward
@@ -96,6 +96,13 @@ class WafScoreEnv(WafEnv):
         elif self.reward_name == "binary":  # step reward is -1 if injection detected 'reward_win' if succeeded
             new_reward = -1 if win is False else self.reward_win_val
             step_reward = new_reward
+        elif self.reward_name == "oppe4rl":
+            if win:
+                new_reward = self.total_reward_win_val
+                step_reward = new_reward
+            else:
+                new_reward = -self.score
+                step_reward = self._process_reward(new_reward)
 
         logging.debug("step_reward: {}".format(colored(repr(step_reward),
                                                        'yellow')))

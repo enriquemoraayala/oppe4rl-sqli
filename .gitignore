@@ -174,8 +174,6 @@ logs/
 
 # checkpoints
 ckpt/
-src/gym_waf/__pycache__/
+**/__pycache__
 src/pytorch_model.bin
 src/oppe4rl.code-workspace
-src/gym_waf/__pycache__/__init__.cpython-39.pyc
-src/gym_waf/__pycache__/__init__.cpython-39.pyc

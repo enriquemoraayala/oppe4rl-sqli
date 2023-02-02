@@ -34,7 +34,7 @@ class WafScoreEnv(WafEnv):
     def _check_sqli(self, payload):
         try:
             score, is_sqli = self._get_score(payload)
-            logging.debug("Payload: {} - Score: {} - is_sqli: {}".format(colored(repr(self.payload), 'red'), score, is_sqli))
+            logging.debug("Payload: {} - Score: {} - is_sqli: {}".format(self.payload, score, is_sqli))
         except ClassificationFailure:
             logging.warning("Failed to classify payload: {}".format(colored(repr(self.payload), 'red')))
             score = 0.01
@@ -52,8 +52,7 @@ class WafScoreEnv(WafEnv):
 
         self.observation = self.feature_extractor.extract(self.payload)
 
-        logging.debug("mutated payload: {}".format(colored(repr(self.payload),
-                                                   'yellow')))
+        logging.debug("mutated payload: {}".format(self.payload))
         #logging.debug("state: {}".format(colored(repr(self.observation),
         #                                         'yellow')))
 
@@ -63,11 +62,11 @@ class WafScoreEnv(WafEnv):
             # we win!
             episode_over = True
             win = True
-            logging.debug("WIN with payload: {}".format(colored(repr(self.payload), 'green')))
+            logging.debug("WIN with payload: {}".format(self.payload))
         elif self.turns >= self.maxturns:
             # out of turns :(
             episode_over = True
-            logging.debug("Finished with payload: {}".format(colored(repr(self.payload), 'red')))
+            logging.debug("Finished with payload: {}".format(self.payload))
         else:
             episode_over = False
 
@@ -104,8 +103,7 @@ class WafScoreEnv(WafEnv):
                 new_reward = -self.score
                 step_reward = self._process_reward(new_reward)
 
-        logging.debug("step_reward: {}".format(colored(repr(step_reward),
-                                                       'yellow')))
+        logging.debug("step_reward: {}".format(step_reward))
 
         if episode_over:
             logging.debug("episode is over: reward = {}!".format(step_reward))

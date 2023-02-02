@@ -13,7 +13,7 @@ MUTATION_LOOKUP = {i: act for i, act in enumerate(
     manipulate.place_mutation)}
 
 SEED = 0
-logging.basicConfig(filename='./waf_env_logs.log', level=logging.DEBUG)
+logging.basicConfig(filename='./logs/waf_env_logs.log', level=logging.DEBUG)
 
 
 class WafEnv(gym.Env):

@@ -150,16 +150,16 @@ def main(args) -> None:
                   .format(episode, np.mean(scores)))
             torch.save(agent.qnetwork_local.state_dict(),
                        "agent_checkpoint.pth")
-        os.makedirs("outputs", exist_ok=True)
-        try:
-            df_results.to_csv('outputs/run_history.csv', sep=';')
-            df_results_emb['episode', 'step'].to_csv('outputs/run_history_embidx.csv', sep=';')
-            state_emb = np.array(df_results_emb['state'])
-            np.save('outputs/emb_states.npy', state_emb)
-            next_state_emb = np.array(df_results_emb['next_state'])
-            np.save('output/next_state_emb.npy', next_state_emb)
-        except Exception as e:
-            print(e)
+    os.makedirs("outputs", exist_ok=True)
+    try:
+        df_results.to_csv('outputs/run_history.csv', sep=';')
+        df_results_emb[['episode', 'step']].to_csv('outputs/run_history_emb_idx.csv', sep=';')
+        state_emb = np.array(df_results_emb['state_emb'])
+        np.save('outputs/emb_states.npy', state_emb)
+        next_state_emb = np.array(df_results_emb['next_state_emb'])
+        np.save('outputs/next_state_emb.npy', next_state_emb)
+    except Exception as e:
+        print(e)
 
     ## METRICS ##
     history_by_episode = df_results.groupby(["episode"]).agg(

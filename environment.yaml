@@ -1,4 +1,4 @@
-name: gsoc-ds-rl-sql-injection-itinnovation
+name: oppe4rl
 channels:
   - defaults
   - pytorch

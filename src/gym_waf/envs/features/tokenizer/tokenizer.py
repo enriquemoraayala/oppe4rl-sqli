@@ -252,5 +252,5 @@ class EmbedExtractor:
         self.model.to(device)
 
         input = self.tokenizer(sql_query, return_tensors="pt", padding=True).to(device)
-        feature_vector = self.model.encode(sql_query)
+        feature_vector = self.model.encode(sql_query, show_progress_bar=False)
         return feature_vector

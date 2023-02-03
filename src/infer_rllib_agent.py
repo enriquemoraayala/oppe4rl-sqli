@@ -47,14 +47,24 @@ def main(args):
     action_space_size = env.action_space.n
     state_space_size = env.observation_space.shape
     episode_reward = 0
+    i = 0
     done = False
-    algo = Algorithm.from_checkpoint("./ckpt_ppo_agent/checkpoint0006")
+    algo = Algorithm.from_checkpoint("./ckpt_ppo_agent/checkpoint_000006")
     obs = env.reset()
     while not done:
         action = algo.compute_single_action(obs)
         obs, reward, done, info = env.step(action)
         episode_reward += reward
+        i += 1
 
+    s = "{:3d} reward {:6.2f}/{:6.2f}/{:6.2f} len {:6.2f}"
+    print(s.format(
+            i,
+            info["episode_reward_min"],
+            info["episode_reward_mean"],
+            info["episode_reward_max"],
+            info["episode_len_mean"]
+        ))
 
 
 if __name__ == '__main__':

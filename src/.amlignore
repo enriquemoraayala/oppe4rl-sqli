@@ -1,7 +1,0 @@
-.env/
-__pycache__/
-logs/
-outputs/
-ckpt/
-ram:/
-agent_checkpoint.pth

@@ -1,2 +1,0 @@
-select id, name, username from users where id='98' and age>23
-select * from users where age = 9

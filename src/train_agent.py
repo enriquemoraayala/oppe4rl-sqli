@@ -153,7 +153,11 @@ def main(args) -> None:
         os.makedirs("outputs", exist_ok=True)
         try:
             df_results.to_csv('outputs/run_history.csv', sep=';')
-            df_results_emb.to_csv('outputs/run_history_emb.csv', sep=';')
+            df_results_emb['episode', 'step'].to_csv('outputs/run_history_embidx.csv', sep=';')
+            state_emb = np.array(df_results_emb['state'])
+            np.save('outputs/emb_states.npy', state_emb)
+            next_state_emb = np.array(df_results_emb['next_state'])
+            np.save('output/next_state_emb.npy', next_state_emb)
         except Exception as e:
             print(e)
 

@@ -101,7 +101,8 @@ class WafScoreEnv(WafEnv):
                 step_reward = new_reward
             else:
                 new_reward = -self.score
-                step_reward = self._process_reward(new_reward)
+                #step_reward = self._process_reward(new_reward)
+                step_reward = new_reward
 
         logging.debug("step_reward: {}".format(step_reward))
 

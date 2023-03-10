@@ -10,9 +10,14 @@ from ray.rllib.agents.ppo import PPOTrainer
 import ray
 from ray.tune.registry import register_env
 from ray.tune.logger import pretty_print
+#import tensorflow as tf
 import tensorflow as tf
+import numpy as np
+
+import torch
 from gym_waf.envs.waf_brain_env import WafBrainEnv
 from ray.rllib.algorithms import Algorithm
+from ray.rllib.models.preprocessors import get_preprocessor
 
 
 def env_creator(env_config: dict):
@@ -28,6 +33,8 @@ def env_creator(env_config: dict):
 
 
 def main(args):
+    tf.compat.v1.enable_eager_execution()
+    #tf.compat.v1.disable_v2_behavior()
     ray.init(local_mode=args.local_mode)
     run = Run.get_context(allow_offline=True)
 
@@ -44,26 +51,42 @@ def main(args):
     register_env("rl-waf", env_creator)
 
     env = env_creator(env_config)
+    prep = get_preprocessor(env.observation_space)(env.observation_space)
     action_space_size = env.action_space.n
     state_space_size = env.observation_space.shape
     episode_reward = 0
     i = 0
     done = False
-    algo = Algorithm.from_checkpoint("./ckpt_ppo_agent/checkpoint_000006")
+    algo = Algorithm.from_checkpoint("./ckpt_ppo_agent_tf2/checkpoint_000006")
     obs = env.reset()
+    #obs = torch.from_numpy(obs)
+    #obs = tf.convert_to_tensor(obs)
+    obs_ = prep.transform(obs)
+    ppo_policy = algo.get_policy()
+    logits, _ = ppo_policy.model({"obs": np.array([obs_])})
+    #logits, _ = ppo_policy.model(obs)
+    dist = ppo_policy.dist_class(logits, ppo_policy.model)
+    
     while not done:
         action = algo.compute_single_action(obs)
+        # logits, _ = ppo_policy.model({"obs": np.array([obs])})
+        logits, _ = ppo_policy.model({"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
+        dist = ppo_policy.dist_class(logits, ppo_policy.model)
+  
         obs, reward, done, info = env.step(action)
+        if i == 0:
+            s = 'Original payload: ' + info['original']
+            print(s)
+        print('Selected action %d' %action)
+
         episode_reward += reward
         i += 1
 
-    s = "{:3d} reward {:6.2f}/{:6.2f}/{:6.2f} len {:6.2f}"
+    print('Final payload %s' %info['payload'])
+    s = "reward {:6.2f} len {:6.2f}"
     print(s.format(
-            i,
-            info["episode_reward_min"],
-            info["episode_reward_mean"],
-            info["episode_reward_max"],
-            info["episode_len_mean"]
+            episode_reward,
+            i
         ))
 
 

@@ -75,7 +75,7 @@ def main(args):
     algo = Algorithm.from_checkpoint("./ckpt_ppo_agent_tf2/checkpoint_000006")
     
     #generating some trajectories and evaluating the trained policy
-    num_trajectories = 20
+    num_trajectories = 200
     
     df_results, df_results_emb = generate_df()
     # ppo_policy = algo.get_policy()
@@ -109,9 +109,10 @@ def main(args):
             episode_reward += reward
             step += 1
 
-        print('Final payload %s' %env_info['payload'])
-        s = "reward {:6.2f} len {:6.2f}"
+        # print('Final payload %s' %env_info['payload'])
+        s = "episode {:d} reward {:6.2f} len {:6.2f}"
         print(s.format(
+                episode,
                 episode_reward,
                 step
             ))
@@ -124,7 +125,7 @@ def main(args):
     state_emb = np.array(df_results_emb['state_emb'])
     csv_path = 'outputs_ppo/emb_states_rllib.npy'
     np.save(csv_path, state_emb)
-
+    print('Files saved! Process done!')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

@@ -59,7 +59,6 @@ def load_df(path='./outputs_ppo'):
 def main(args):
     tf.compat.v1.enable_eager_execution()
     ray.init(local_mode=args.local_mode)
-    run = Run.get_context(allow_offline=True)
 
     env_config_fpath = args.env_config
     # Read configurations
@@ -107,60 +106,30 @@ def main(args):
     print(df.head())
     
     ppo_policy = algo.get_policy()
+    prep = get_preprocessor(env.observation_space)(env.observation_space)
 
-    prob_episode = 0
+    J_eps = 0.0
     for ep in episodes:
-        
+        prob_product = 1.0
         df_ = df[df['episode'] == ep].copy()
+        j = 0
         for i,step in df_.iterrows():
+            if j == 0:
+                cum_reward = step['exp_reward']
             obs = np_emb_state_[i]
-        
-        
-        
-    #     done = False
-    #     episode_reward = 0
-    #     obs = env.reset()
-    #     step = 0
-    #     while not done:
-    #         action_direct = algo.compute_single_action(obs)
-    #         # logits, _ = ppo_policy.model({"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
-    #         # dist = ppo_policy.dist_class(logits, ppo_policy.model)
-    #         obs, reward, done, env_info = env.step(action_direct)
-    #         df_results = pd.concat(
-    #             [df_results,
-    #              pd.DataFrame([[episode, step, env.orig_payload, env_info['previous_payload'],
-    #                             action_direct, env_info["payload"],
-    #                             reward, env_info['win']]],
-    #                             columns=df_results.columns)],
-    #             axis=0,
-    #             join="inner",
-    #             ignore_index=True)
-    #         df_results_emb = pd.concat(
-    #             [df_results_emb,
-    #              pd.DataFrame([[episode, step, env_info['emb_payload'], env_info["emb_prev_payload"]]],
-    #                             columns=df_results_emb.columns)],
-    #             axis=0,
-    #             join="inner",
-    #             ignore_index=True)
-    #         episode_reward += reward
-    #         step += 1
+            action_direct = algo.compute_single_action(obs)
+            action = step['action']
+            logits, _ = ppo_policy.model({"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
+            probs_ = tf.nn.softmax(logits)
+            prob_ = probs_[0][action]
+            prob_product *= prob_.numpy()
+            j += 1
+        J_eps += prob_product * cum_reward
+    
+    J_eps = J_eps / len(episodes)
+    print('J_eps: %.8f' % J_eps)
 
-    #     print('Final payload %s' %env_info['payload'])
-    #     s = "reward {:6.2f} len {:6.2f}"
-    #     print(s.format(
-    #             episode_reward,
-    #             step
-    #         ))
-    # csv_path = 'outputs_ppo/run_history_rllib.csv'
-    # df_results.to_csv(csv_path, sep=';')
-    # csv_path = 'outputs_ppo/run_history_rllib_emb.csv'
-    # df_results_emb.to_csv(csv_path, sep=';')
-    # csv_path = 'outputs_ppo/run_history_rllib_emb_idx.csv'
-    # df_results_emb[['episode', 'step']].to_csv(csv_path, sep=';')
-    # state_emb = np.array(df_results_emb['state_emb'])
-    # csv_path = 'outputs_ppo/emb_states_rllib.npy'
-    # np.save(csv_path, state_emb)
-
+ 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

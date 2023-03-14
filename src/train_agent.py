@@ -87,19 +87,9 @@ def main(args) -> None:
     elif strategy == "all":
         strategy_i = 2
 
-    df_results = pd.DataFrame(columns=[
-                              'episode', 'step', 'original_payload', 'state', 'action',
-                              'next_state', 'reward', 'win'])
-    df_results_emb = pd.DataFrame(columns=[
-                                  'episode', 'step', 'state_emb', 'next_state_emb'
-                                ])
-    df_results = df_results.astype({
-        "episode": int, "step": int, "original_payload": "object", "action": int, "state": "object", "next_state": "object",
-        "reward": float, "win": int})
-    df_results_emb = df_results_emb.astype({
-        "episode": int, "step": int, "state_emb": float, "next_state_emb": float
-    })
+    df_results, df_results_emb = generate_df()
     episode_wins = [0] * episodes 
+    os.makedirs("outputs", exist_ok=True)
     for i_episode, episode in enumerate(range(1, episodes + 1)):
         state = env.reset()
         score = 0
@@ -145,21 +135,28 @@ def main(args) -> None:
         sw.add_scalar('reward', score, episode)
         sw.add_scalar('num_mutations', step, episode)
         sw.add_scalar('Avg. last episodes reward', np.mean(scores))
+        
         if episode % 50 == 0 and agent_name == "dqn":
             print('\rEpisode {}\tAverage Score: {:.2f}'
                   .format(episode, np.mean(scores)))
             torch.save(agent.qnetwork_local.state_dict(),
                        "agent_checkpoint.pth")
-    os.makedirs("outputs", exist_ok=True)
-    try:
-        df_results.to_csv('outputs/run_history.csv', sep=';')
-        df_results_emb[['episode', 'step']].to_csv('outputs/run_history_emb_idx.csv', sep=';')
-        state_emb = np.array(df_results_emb['state_emb'])
-        np.save('outputs/emb_states.npy', state_emb)
-        next_state_emb = np.array(df_results_emb['next_state_emb'])
-        np.save('outputs/next_state_emb.npy', next_state_emb)
-    except Exception as e:
-        print(e)
+    
+        if (i_episode+1) % 20 == 0:
+            try:
+                csv_path = 'outputs/run_history_' + str(i_episode) + '.csv'
+                df_results.to_csv(csv_path, sep=';')
+                csv_path = 'outputs/run_history_emb_idx_' + str(i_episode) + '.csv'
+                df_results_emb[['episode', 'step']].to_csv(csv_path, sep=';')
+                state_emb = np.array(df_results_emb['state_emb'])
+                csv_path = 'outputs/emb_states_' + str(i_episode) + '.npy'
+                np.save(csv_path, state_emb)
+                next_state_emb = np.array(df_results_emb['next_state_emb'])
+                csv_path = 'outputs/next_states_' + str(i_episode) + '.npy'
+                np.save(csv_path, next_state_emb)
+                df_results, df_results_emb = generate_df()
+            except Exception as e:
+                print(e)
 
     ## METRICS ##
     history_by_episode = df_results.groupby(["episode"]).agg(
@@ -186,6 +183,21 @@ def main(args) -> None:
     ).sort_values("mean_steps_win", ascending=True)
     log_dataframe(run, winners_stats.reset_index(), "winner_payload_stats")
     return scores
+
+def generate_df():
+    df_results = pd.DataFrame(columns=[
+                              'episode', 'step', 'original_payload', 'state', 'action',
+                              'next_state', 'reward', 'win'])
+    df_results_emb = pd.DataFrame(columns=[
+                                  'episode', 'step', 'state_emb', 'next_state_emb'
+                                ])
+    df_results = df_results.astype({
+        "episode": int, "step": int, "original_payload": "object", "action": int, "state": "object", "next_state": "object",
+        "reward": float, "win": int})
+    df_results_emb = df_results_emb.astype({
+        "episode": int, "step": int, "state_emb": float, "next_state_emb": float
+    })
+    return df_results, df_results_emb
 
 
 def log_dataframe(run, df: pd.DataFrame, name: str) -> None:

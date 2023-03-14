@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import pandas as pd
 from azureml.core import Run
 
 import ray.rllib.agents.ppo as ppo
@@ -32,6 +33,15 @@ def env_creator(env_config: dict):
     return env
 
 
+def generate_df():
+    df_results = pd.DataFrame(columns=[
+                              'episode', 'step', 'original_payload', 'state', 'action',
+                              'next_state', 'reward', 'win'])
+    df_results = df_results.astype({
+        "episode": int, "step": int, "original_payload": "object", "action": int, "state": "object", "next_state": "object",
+        "reward": float, "win": int})
+    return df_results
+
 def main(args):
     tf.compat.v1.enable_eager_execution()
     #tf.compat.v1.disable_v2_behavior()
@@ -54,40 +64,47 @@ def main(args):
     prep = get_preprocessor(env.observation_space)(env.observation_space)
     action_space_size = env.action_space.n
     state_space_size = env.observation_space.shape
-    episode_reward = 0
-    i = 0
-    done = False
-    algo = Algorithm.from_checkpoint("./ckpt_ppo_agent_tf2/checkpoint_000006")
-    obs = env.reset()
-    #obs = torch.from_numpy(obs)
-    #obs = tf.convert_to_tensor(obs)
-    obs_ = prep.transform(obs)
-    ppo_policy = algo.get_policy()
-    logits, _ = ppo_policy.model({"obs": np.array([obs_])})
-    #logits, _ = ppo_policy.model(obs)
-    dist = ppo_policy.dist_class(logits, ppo_policy.model)
     
-    while not done:
-        action = algo.compute_single_action(obs)
-        # logits, _ = ppo_policy.model({"obs": np.array([obs])})
-        logits, _ = ppo_policy.model({"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
-        dist = ppo_policy.dist_class(logits, ppo_policy.model)
-  
-        obs, reward, done, info = env.step(action)
-        if i == 0:
-            s = 'Original payload: ' + info['original']
-            print(s)
-        print('Selected action %d' %action)
+ 
+    algo = Algorithm.from_checkpoint("./ckpt_ppo_agent_tf2/checkpoint_000006")
+    
+    #generating some trajectories and evaluating the trained policy
+    num_trajectories = 20
+    
+    df_results = generate_df()
+    # ppo_policy = algo.get_policy()
 
-        episode_reward += reward
-        i += 1
+    for episode in range(num_trajectories):
+        done = False
+        episode_reward = 0
+        obs = env.reset()
+        step = 0
+        while not done:
+            action_direct = algo.compute_single_action(obs)
+            # logits, _ = ppo_policy.model({"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
+            # dist = ppo_policy.dist_class(logits, ppo_policy.model)
+            obs, reward, done, env_info = env.step(action_direct)
+            df_results = pd.concat(
+                [df_results,
+                 pd.DataFrame([[episode, step, env.orig_payload, env_info['previous_payload'],
+                                action_direct, env_info["payload"],
+                                reward, env_info['win']]],
+                                columns=df_results.columns)],
+                axis=0,
+                join="inner",
+                ignore_index=True)
 
-    print('Final payload %s' %info['payload'])
-    s = "reward {:6.2f} len {:6.2f}"
-    print(s.format(
-            episode_reward,
-            i
-        ))
+            episode_reward += reward
+            step += 1
+
+        print('Final payload %s' %env_info['payload'])
+        s = "reward {:6.2f} len {:6.2f}"
+        print(s.format(
+                episode_reward,
+                step
+            ))
+    csv_path = 'outputs/run_history_rllib.csv'
+    df_results.to_csv(csv_path, sep=';')
 
 
 if __name__ == '__main__':

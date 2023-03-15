@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 from azureml.core import Run
 
 import ray.rllib.agents.ppo as ppo
@@ -20,6 +21,29 @@ from gym_waf.envs.waf_brain_env import WafBrainEnv
 from ray.rllib.algorithms import Algorithm
 from ray.rllib.models.preprocessors import get_preprocessor
 
+class SimpleNet(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.hid1 = torch.nn.Linear(794, 256)
+        self.hid2 = torch.nn.Linear(256, 128)
+        self.hid3 = torch.nn.Linear(128, 32)
+        self.oupt = torch.nn.Linear(32, 1)
+
+        torch.nn.init.xavier_uniform_(self.hid1.weight)
+        torch.nn.init.zeros_(self.hid1.bias)
+        torch.nn.init.xavier_uniform_(self.hid2.weight)
+        torch.nn.init.zeros_(self.hid2.bias)
+        torch.nn.init.xavier_uniform_(self.hid3.weight)
+        torch.nn.init.zeros_(self.hid3.bias)
+        torch.nn.init.xavier_uniform_(self.oupt.weight)
+        torch.nn.init.zeros_(self.oupt.bias)
+
+    def forward(self, x):
+        z = torch.relu(self.hid1(x))
+        z = torch.relu(self.hid2(z))
+        z = torch.relu(self.hid3(z))
+        z = self.oupt(z)  # no activation
+        return z
 
 def env_creator(env_config: dict):
     max_steps = env_config["steps"]
@@ -143,10 +167,40 @@ def main(args):
     J_eps = df_['exp_reward'].mean()
     print('Real Value function of %s Policy: %.8f' % (args.agent_type, J_eps))
 
+    #loading q_regressor
+    print('Loading regressor')
+    model = SimpleNet()
+    model.load_state_dict(torch.load('./q_regressor_chkp/q_regressor.pth'))
+    model.eval()
+    print('Q_Regressor loaded')
+
+    print('Computing DM OPPE')
+    actions = range(0,26)
+    a_t = torch.Tensor(actions).to(torch.int64)
+    actions_one_hot = torch.nn.functional.one_hot(a_t)
+
+    values = np.ndarray()
+    for ep in episodes:
+        df_ = df[df['episode'] == ep].copy()
+
+        probs = np.ndarray()
+        q_estimations = np.ndarray()
+
+        for i,step in df_.iterrows():
+            obs = np_emb_state_[i]
+            action = step['action']
+            t_x = torch.cat([obs, actions_one_hot[action]], dim=1)
+            x = torch.nn.functional.normalize(x)
+            output = model(x)
+            q_estimations.append(output)
+
+            logits, _ = ppo_policy.model({"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
+            probs_ = tf.nn.softmax(logits)
+            prob_ = probs_[0][action]
+            probs.append(prob_.numpy())
+        values.append(np.dot(probs, q_estimations.T))
 
 
-
- 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

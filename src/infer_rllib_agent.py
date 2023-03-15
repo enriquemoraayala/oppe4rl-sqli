@@ -37,10 +37,16 @@ def generate_df():
     df_results = pd.DataFrame(columns=[
                               'episode', 'step', 'original_payload', 'state', 'action',
                               'next_state', 'reward', 'win'])
+    df_results_emb = pd.DataFrame(columns=[
+                                  'episode', 'step', 'state_emb', 'next_state_emb'
+                                ])
     df_results = df_results.astype({
         "episode": int, "step": int, "original_payload": "object", "action": int, "state": "object", "next_state": "object",
         "reward": float, "win": int})
-    return df_results
+    df_results_emb = df_results_emb.astype({
+        "episode": int, "step": int, "state_emb": float, "next_state_emb": float
+    })
+    return df_results, df_results_emb
 
 def main(args):
     tf.compat.v1.enable_eager_execution()
@@ -69,9 +75,9 @@ def main(args):
     algo = Algorithm.from_checkpoint("./ckpt_ppo_agent_tf2/checkpoint_000006")
     
     #generating some trajectories and evaluating the trained policy
-    num_trajectories = 20
+    num_trajectories = 1000
     
-    df_results = generate_df()
+    df_results, df_results_emb = generate_df()
     # ppo_policy = algo.get_policy()
 
     for episode in range(num_trajectories):
@@ -93,19 +99,33 @@ def main(args):
                 axis=0,
                 join="inner",
                 ignore_index=True)
-
+            df_results_emb = pd.concat(
+                [df_results_emb,
+                 pd.DataFrame([[episode, step, env_info['emb_payload'], env_info["emb_prev_payload"]]],
+                                columns=df_results_emb.columns)],
+                axis=0,
+                join="inner",
+                ignore_index=True)
             episode_reward += reward
             step += 1
 
-        print('Final payload %s' %env_info['payload'])
-        s = "reward {:6.2f} len {:6.2f}"
+        # print('Final payload %s' %env_info['payload'])
+        s = "episode {:d} reward {:6.2f} len {:6.2f}"
         print(s.format(
+                episode,
                 episode_reward,
                 step
             ))
-    csv_path = 'outputs/run_history_rllib.csv'
+    csv_path = 'outputs_ppo/run_history_rllib.csv'
     df_results.to_csv(csv_path, sep=';')
-
+    csv_path = 'outputs_ppo/run_history_rllib_emb.csv'
+    df_results_emb.to_csv(csv_path, sep=';')
+    csv_path = 'outputs_ppo/run_history_rllib_emb_idx.csv'
+    df_results_emb[['episode', 'step']].to_csv(csv_path, sep=';')
+    state_emb = np.array(df_results_emb['state_emb'])
+    csv_path = 'outputs_ppo/emb_states_rllib.npy'
+    np.save(csv_path, state_emb)
+    print('Files saved! Process done!')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

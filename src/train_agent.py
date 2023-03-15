@@ -142,17 +142,17 @@ def main(args) -> None:
             torch.save(agent.qnetwork_local.state_dict(),
                        "agent_checkpoint.pth")
     
-        if (i_episode+1) % 20 == 0:
+        if (i_episode+1) % 400 == 0:
             try:
-                csv_path = 'outputs/run_history_' + str(i_episode) + '.csv'
+                csv_path = 'outputs_random/run_history_' + str(i_episode) + '.csv'
                 df_results.to_csv(csv_path, sep=';')
-                csv_path = 'outputs/run_history_emb_idx_' + str(i_episode) + '.csv'
+                csv_path = 'outputs_random/run_history_emb_idx_' + str(i_episode) + '.csv'
                 df_results_emb[['episode', 'step']].to_csv(csv_path, sep=';')
                 state_emb = np.array(df_results_emb['state_emb'])
-                csv_path = 'outputs/emb_states_' + str(i_episode) + '.npy'
+                csv_path = 'outputs_random/emb_states_' + str(i_episode) + '.npy'
                 np.save(csv_path, state_emb)
                 next_state_emb = np.array(df_results_emb['next_state_emb'])
-                csv_path = 'outputs/next_states_' + str(i_episode) + '.npy'
+                csv_path = 'outputs_random/next_states_' + str(i_episode) + '.npy'
                 np.save(csv_path, next_state_emb)
                 df_results, df_results_emb = generate_df()
             except Exception as e:

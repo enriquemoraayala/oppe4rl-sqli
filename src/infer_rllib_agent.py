@@ -75,7 +75,7 @@ def main(args):
     algo = Algorithm.from_checkpoint("./ckpt_ppo_agent_tf2/checkpoint_000006")
     
     #generating some trajectories and evaluating the trained policy
-    num_trajectories = 200
+    num_trajectories = 1000
     
     df_results, df_results_emb = generate_df()
     # ppo_policy = algo.get_policy()

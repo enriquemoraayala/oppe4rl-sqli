@@ -177,3 +177,8 @@ ckpt/
 **/__pycache__
 src/pytorch_model.bin
 src/oppe4rl.code-workspace
+notebooks/features.txt
+notebooks/metadata.txt
+src/outputs_random/run_history_03022023.csv
+src/outputs_random/run_history_emb_03022023.csv
+*.pth

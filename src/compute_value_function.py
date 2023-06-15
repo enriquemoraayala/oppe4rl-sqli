@@ -357,7 +357,7 @@ def main(args):
     print('Q_Regressor loaded')
 
     # dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_episodes_b, J_eps, model)
-    # is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
+    is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
     snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
 
 

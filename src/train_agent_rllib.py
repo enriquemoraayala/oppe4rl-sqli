@@ -17,7 +17,7 @@ from gym_waf.envs.waf_brain_env import WafBrainEnv
 # number of steps in an episode
 
 def main(args):
-    tf.compat.v1.enable_eager_execution()
+    # tf.compat.v1.enable_eager_execution()
     ray.init(local_mode=args.local_mode)
     run = Run.get_context(allow_offline=True)
 
@@ -59,7 +59,7 @@ def main(args):
     run.tag("agent", agent)
 
     config = {
-        "framework": "tf2",
+        "framework": "torch",
         "env": "rl-waf",
         "env_config": env_config,
         "num_gpus": int(os.environ.get("RLLIB_NUM_GPUS", "0")),
@@ -76,7 +76,7 @@ def main(args):
         result = trainer.train()
         if n%5 == 0:
             print(pretty_print(result))
-            file_name = trainer.save('ckpt_ppo_agent_tf2')
+            file_name = trainer.save('ckpt_ppo_agent_torch')
         s = "{:3d} reward {:6.2f}/{:6.2f}/{:6.2f} len {:6.2f} saved {}"
         lengths += result["hist_stats"]["episode_lengths"]
         print(s.format(

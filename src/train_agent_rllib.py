@@ -63,7 +63,7 @@ def main(args):
         "env": "rl-waf",
         "env_config": env_config,
         "num_gpus": int(os.environ.get("RLLIB_NUM_GPUS", "0")),
-        "num_workers": 1,
+        "num_workers": 0,
         "log_level": "WARN",
         "horizon": 30
     }

@@ -8,6 +8,7 @@ from azureml.core import Run
 import ray.rllib.agents.ppo as ppo
 from ray import tune
 from ray.rllib.agents.ppo import PPOTrainer
+from ray.rllib.algorithms.ppo import PPO
 # from ray.rllib.algorithms.dqn.dqn import DQNTrainer
 import ray
 from ray.tune.registry import register_env
@@ -293,6 +294,7 @@ def snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_ep
 def main(args):
     tf.compat.v1.enable_eager_execution()
     ray.init(local_mode=args.local_mode)
+    print(ray.__version__)
 
     env_config_fpath = args.env_config
     # Read configurations
@@ -309,8 +311,19 @@ def main(args):
     print('Number of actions: %d' % env.action_space.n)
     print('State space dimension: %s' % env.observation_space.shape)
     if args.agent_type == 'ppo':
-        algo = Algorithm.from_checkpoint(
-            "./ckpt_ppo_agent_tf2/checkpoint_000006")
+        algo_config = {
+            "framework": "tf2",
+            "env": "rl-waf",
+            "env_config": env_config,
+            "num_gpus": int(os.environ.get("RLLIB_NUM_GPUS", "0")),
+            "num_workers": 0,
+            "log_level": "WARN",
+            "horizon": 30
+        }
+        algo = PPO(algo_config)
+        algo.restore("./ckpt_ppo_agent_tf2/checkpoint_000006")
+        # algo = Algorithm.from_checkpoint(
+        #    "./ckpt_ppo_agent_tf2/checkpoint_000006")
         print('Checkpoint loaded')
         path_to_trajectories = './outputs_ppo'
         ppo_policy = algo.get_policy()

@@ -2,24 +2,15 @@ import argparse
 import json
 import os
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from azureml.core import Run
-
-import ray.rllib.agents.ppo as ppo
-from ray import tune
-from ray.rllib.agents.ppo import PPOTrainer
-# from ray.rllib.algorithms.dqn.dqn import DQNTrainer
 import ray
-from ray.tune.registry import register_env
-from ray.tune.logger import pretty_print
-# import tensorflow as tf
-import tensorflow as tf
 import numpy as np
-
 import torch
+import tensorflow as tf
+
+from ray.tune.registry import register_env
 from gym_waf.envs.waf_brain_env import WafBrainEnv
 from ray.rllib.algorithms import Algorithm
-from ray.rllib.models.preprocessors import get_preprocessor
+from ray.rllib.algorithms.ppo import PPO
 
 
 class SimpleNet(torch.nn.Module):
@@ -48,29 +39,39 @@ class SimpleNet(torch.nn.Module):
 
 
 def env_creator(env_config: dict):
+    # parece que rllib al guardar el checkpoint guarda tambien los parametros
+    # del env y lo vuelve a crear
+    # la version 2.2 no permite enviarle el entorno (parece)
+    # workaround: voy a forzar el payloads_fpath
     max_steps = env_config["steps"]
     payloads_fpath = env_config["payloadsPath"]
+    # payloads_fpath = "/Users/ESMoraEn/repositories/dcg-oppe/src/gym_waf/data/sqli-1k.csv"
     allow_payload_actions = env_config["allowPayloadActions"]
     feature_extractor = env_config["featureExtractor"]
     reward_name = env_config["reward"]
     reward_win_val = env_config["rewardWin"]
-    env = WafBrainEnv(payloads_file=payloads_fpath, maxturns=max_steps, feature_extractor=feature_extractor,
-                      payload_actions=allow_payload_actions, reward_name=reward_name, reward_win_val=reward_win_val)
+    env = WafBrainEnv(payloads_file=payloads_fpath, maxturns=max_steps,
+                      feature_extractor=feature_extractor,
+                      payload_actions=allow_payload_actions,
+                      reward_name=reward_name, reward_win_val=reward_win_val)
     return env
 
 
 def generate_df():
     df_results = pd.DataFrame(columns=[
-                              'episode', 'step', 'original_payload', 'state', 'action',
+                              'episode', 'step', 'original_payload', 'state',
+                              'action',
                               'next_state', 'reward', 'win'])
-    df_results_emb = pd.DataFrame(columns=[
-                                  'episode', 'step', 'state_emb', 'next_state_emb'
-                                  ])
+    df_results_emb = pd.DataFrame(columns=['episode', 'step',
+                                           'state_emb', 'next_state_emb'
+                                           ])
     df_results = df_results.astype({
-        "episode": int, "step": int, "original_payload": "object", "action": int, "state": "object", "next_state": "object",
+        "episode": int, "step": int, "original_payload": "object",
+        "action": int, "state": "object", "next_state": "object",
         "reward": float, "win": int})
     df_results_emb = df_results_emb.astype({
-        "episode": int, "step": int, "state_emb": float, "next_state_emb": float
+        "episode": int, "step": int, "state_emb": float,
+        "next_state_emb": float
     })
     return df_results, df_results_emb
 
@@ -85,10 +86,12 @@ def load_df(path='./outputs_ppo', agent_type='ppo'):
     path_random = './outputs_random/1000_episodes_random/'
     df_b = pd.read_csv(path_random + 'run_history_199.csv',
                        sep=';', index_col=0)
-    # df_emb = pd.read_csv(path_random + 'run_history_emb_idx_199.csv', sep=';', index_col=0)
+    # df_emb = pd.read_csv(path_random + 'run_history_emb_idx_199.csv',
+    # sep=';', index_col=0)
     np_emb_state_b = np.load(
         path_random + 'emb_states_199.npy', allow_pickle=True)
-    # np_emb_next_state = np.load(path_random + 'next_states_199.npy', allow_pickle=True)
+    # np_emb_next_state = np.load(path_random + 'next_states_199.npy',
+    # allow_pickle=True)
 
     skeeped_files = []
     # adding all the others
@@ -109,6 +112,7 @@ def load_df(path='./outputs_ppo', agent_type='ppo'):
 
     return df, np_emb_state, df_b, np_emb_state_b
 
+
 def add_expected_reward_to_df(df, total_episodes):
     discount = 0.99  # based in the PPO original paper, default discount
 
@@ -126,7 +130,10 @@ def add_expected_reward_to_df(df, total_episodes):
             j += 1
     return df
 
-def dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_episodes_b, J_eps, model):
+
+def dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b,
+            total_episodes, total_episodes_b, J_eps, model):
+
     print('Computing DM OPPE')
     num_experiments = 10
     batch_size = int(len(total_episodes_b) / num_experiments)
@@ -145,9 +152,9 @@ def dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_e
             df_ = df_b[df_b['episode'] == ep].copy()
 
             # for i,step in df_.iterrows():
-            #we only need the first state
-            step = df_.iloc[0]
-            #global index
+            # we only need the first state
+            # step = df_.iloc[0]
+            # global index
             i = df_.iloc[0].name
 
             probs = []
@@ -156,6 +163,7 @@ def dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_e
             obs = torch.from_numpy(np.stack(np_emb_state_b[i]))
             obs = torch.unsqueeze(obs, 0)
             # summing up all the actions
+            softmax = torch.nn.Softmax(dim=1)
             for action in actions:
                 # action = step['action']
                 a_t = actions_one_hot[action]
@@ -168,15 +176,16 @@ def dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_e
 
                 if args.agent_type == 'ppo':
                     logits, _ = ppo_policy.model(
-                        {"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
-                    probs_ = tf.nn.softmax(logits)
+                                                {"obs": obs})
+                    probs_ = softmax(logits)
                     prob_ = probs_[0][action]
-                    probs.append(prob_.numpy())
+                    probs.append(prob_.detach().numpy())
                 elif args.agent_type == 'random':
                     probs.append(prob_random)
 
             values.append(np.squeeze(np.dot(np.transpose(
-                np.array(q_estimations)), np.expand_dims(np.array(probs), axis=1))))
+                np.array(q_estimations)),
+                np.expand_dims(np.array(probs), axis=1))))
 
         dm_oppe = np.array(values).mean()
         print("Experiment %d of %d: Average DM OPPE for %s %.8f" %
@@ -189,12 +198,13 @@ def dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_e
     rmse = np.sqrt(np.array(errors).mean())
     std = np.array(errors).std()
     print("RSME DM OPPE for %d Experiments of %d episodes: %.8f" %
-          (num_experiments, len(total_episodes), rmse))
+          (num_experiments, batch_size, rmse))
     print("STD DM OPPE for %d Experiments of %d episodes: %.8f" %
-          (num_experiments, len(total_episodes), std))
+          (num_experiments, batch_size, std))
 
 
-def is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps):
+def is_ppo(args, env, ppo_policy, df_b, np_emb_state_b,
+           total_episodes_b, J_eps):
     print('Computing IS OPPE')
     num_experiments = 10
     batch_size = int(len(total_episodes_b) / num_experiments)
@@ -202,9 +212,10 @@ def is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
 
     print('Calculating cum_reward of every episode, behavior policy')
     df_b = add_expected_reward_to_df(df_b, total_episodes_b)
-    
+
     errors = []
 
+    softmax = torch.nn.Softmax(dim=1)
     for exp in range(num_experiments):
         print("Starting experiment %d of %d" % (exp, num_experiments))
         episodes = np.random.choice(total_episodes_b, batch_size)
@@ -212,20 +223,20 @@ def is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
         for ep in episodes:
             df_ = df_b[df_b['episode'] == ep].copy()
             probs = []
-            for i,step in df_.iterrows():
-       
+            for i, step in df_.iterrows():
+
                 # selecting the state
                 obs = torch.from_numpy(np.stack(np_emb_state_b[i]))
                 obs = torch.unsqueeze(obs, 0)
                 action = step['action']
                 logits, _ = ppo_policy.model(
-                                {"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
-                probs_ = tf.nn.softmax(logits)
+                                            {"obs": obs})
+                probs_ = softmax(logits)
                 prob_ = probs_[0][action]
-                probs.append(prob_.numpy() / prob_behavior)
-            
+                probs.append(prob_.detach().numpy() / prob_behavior)
+
             w_episodes.append(np.prod(probs) * df_["exp_reward"].iloc[0])
-            
+
         is_oppe = np.array(w_episodes).mean()
         print("Experiment %d of %d: Average IS OPPE for %s %.8f" %
               ((exp+1), num_experiments, args.agent_type, is_oppe))
@@ -237,11 +248,13 @@ def is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
     rmse = np.sqrt(np.array(errors).mean())
     std = np.array(errors).std()
     print("RSME IS OPPE for %d Experiments of %d episodes: %.8f" %
-          (num_experiments, len(total_episodes_b), rmse))
+          (num_experiments, batch_size, rmse))
     print("STD IS OPPE for %d Experiments of %d episodes: %.8f" %
-          (num_experiments, len(total_episodes_b), std))
+          (num_experiments, batch_size, std))
 
-def snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps):
+
+def snis_ppo(args, env, ppo_policy, df_b,
+             np_emb_state_b, total_episodes_b, J_eps):
     print('Computing SNIS OPPE')
     num_experiments = 10
     batch_size = int(len(total_episodes_b) / num_experiments)
@@ -249,9 +262,9 @@ def snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_ep
 
     print('Calculating cum_reward of every episode, behavior policy')
     df_b = add_expected_reward_to_df(df_b, total_episodes_b)
-    
-    errors = []
 
+    errors = []
+    softmax = torch.nn.Softmax(dim=1)
     for exp in range(num_experiments):
         print("Starting experiment %d of %d" % (exp, num_experiments))
         episodes = np.random.choice(total_episodes_b, batch_size)
@@ -260,21 +273,21 @@ def snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_ep
         for ep in episodes:
             df_ = df_b[df_b['episode'] == ep].copy()
             probs = []
-            for i,step in df_.iterrows():
-       
+            for i, step in df_.iterrows():
+
                 # selecting the state
                 obs = torch.from_numpy(np.stack(np_emb_state_b[i]))
                 obs = torch.unsqueeze(obs, 0)
                 action = step['action']
                 logits, _ = ppo_policy.model(
-                                {"obs": tf.expand_dims(tf.convert_to_tensor(obs), axis=0)})
-                probs_ = tf.nn.softmax(logits)
+                                            {"obs": obs})
+                probs_ = softmax(logits)
                 prob_ = probs_[0][action]
-                probs.append(prob_.numpy() / prob_behavior)
-                w_s.append(prob_.numpy() / prob_behavior)
-            
+                probs.append(prob_.detach().numpy() / prob_behavior)
+                w_s.append(prob_.detach().numpy() / prob_behavior)
+
             w_episodes.append(np.prod(probs) * df_["exp_reward"].iloc[0])
-            
+
         snis_oppe = np.array(w_episodes).mean() / np.array(w_s).mean()
         print("Experiment %d of %d: Average SNIS OPPE for %s %.8f" %
               ((exp+1), num_experiments, args.agent_type, snis_oppe))
@@ -286,13 +299,16 @@ def snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_ep
     rmse = np.sqrt(np.array(errors).mean())
     std = np.array(errors).std()
     print("RSME SNIS OPPE for %d Experiments of %d episodes: %.8f" %
-          (num_experiments, len(total_episodes_b), rmse))
+          (num_experiments, batch_size, rmse))
     print("STD SNIS OPPE for %d Experiments of %d episodes: %.8f" %
-          (num_experiments, len(total_episodes_b), std))
+          (num_experiments, batch_size, std))
+
 
 def main(args):
+
     tf.compat.v1.enable_eager_execution()
-    ray.init(local_mode=args.local_mode)
+    # ray.init(local_mode=args.local_mode)
+    ray.init(local_mode=True)
 
     env_config_fpath = args.env_config
     # Read configurations
@@ -309,9 +325,17 @@ def main(args):
     print('Number of actions: %d' % env.action_space.n)
     print('State space dimension: %s' % env.observation_space.shape)
     if args.agent_type == 'ppo':
-        algo = Algorithm.from_checkpoint(
-            # "./ckpt_ppo_agent_tf2/checkpoint_000006")
-            "./ckpt_ppo_agent_torch/checkpoint_000006_torch")
+        algo_config = {
+            "framework": "torch",
+            "env": "rl-waf",
+            "env_config": env_config,
+            "num_gpus": int(os.environ.get("RLLIB_NUM_GPUS", "0")),
+            "num_workers": 0,
+            "log_level": "WARN",
+            "horizon": 30
+        }
+        algo = PPO(algo_config)
+        algo.restore("./ckpt_ppo_agent_torch/checkpoint_000006_torch")
         print('Checkpoint loaded')
         path_to_trajectories = './outputs_ppo'
         ppo_policy = algo.get_policy()
@@ -323,10 +347,12 @@ def main(args):
         path_to_trajectories, args.agent_type)
     print("Loaded original trajectories: %d" % np_emb_state_.shape[0])
     print("Embeddings: %d" % df.shape[0])
-    assert np_emb_state_.shape[0] == df.shape[0], 'number of steps in trajectories does not match'
+    assert np_emb_state_.shape[0] == df.shape[0], 'number ' \
+           'of steps in trajectories does not match'
     print("Loaded random trajectories %d" % np_emb_state_b.shape[0])
     print("Random embedding: %d" % df_b.shape[0])
-    assert np_emb_state_b.shape[0] == df_b.shape[0], 'number of steps in trajectories does not match'
+    assert np_emb_state_b.shape[0] == df_b.shape[0], 'number ' \
+        'of steps in trajectories does not match'
 
     total_episodes = list(df.episode.unique())
     print('Number of episodes loaded (real ppo policy) for evaluation: %d' %
@@ -357,16 +383,19 @@ def main(args):
     model.eval()
     print('Q_Regressor loaded')
 
-    # dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes, total_episodes_b, J_eps, model)
-    is_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
-    snis_ppo(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes_b, J_eps)
-
+    dm_oppe(args, env, ppo_policy, df_b, np_emb_state_b, total_episodes,
+            total_episodes_b, J_eps, model)
+    is_ppo(args, env, ppo_policy, df_b, np_emb_state_b,
+           total_episodes_b, J_eps)
+    snis_ppo(args, env, ppo_policy,
+             df_b, np_emb_state_b, total_episodes_b, J_eps)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="Train RL agent on WAF-Brain Environment with RLLib")
-    parser.add_argument("--env-config", type=str, help="Path to configuration file of the envionment.",
+    parser.add_argument("--env-config", type=str,
+                        help="Path to configuration file of the envionment.",
                         default="/home/azureuser/cloudfiles/code/Users/Enrique.Mora/rl4pentest/src/config/env.json")
     parser.add_argument("--local-mode", action="store_true",
                         help="Init Ray in local mode for easier debugging.")

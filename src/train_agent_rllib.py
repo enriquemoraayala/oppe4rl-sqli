@@ -76,7 +76,7 @@ def main(args):
         result = trainer.train()
         if n%5 == 0:
             print(pretty_print(result))
-            file_name = trainer.save('ckpt_ppo_agent_torch')
+            file_name = trainer.save('ckpt_ppo_agent_torch_v2')
         s = "{:3d} reward {:6.2f}/{:6.2f}/{:6.2f} len {:6.2f} saved {}"
         lengths += result["hist_stats"]["episode_lengths"]
         print(s.format(
